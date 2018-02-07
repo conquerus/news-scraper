@@ -18,7 +18,8 @@ files. It uses [[https://docs.python.org/2/library/urllib2.html][urllib2]] and [
    to generate them automatically in a certain range.
 3. run =python main.py=
 ** Output
-The output will be in the following format:
+The output will be a list of information for each article scraped in
+the following format:
 | ID Number | Date | Day of the Week | Page | Title | Column | Author's Name | Author's Occupation | Hyperlink |
 Example:
 #+BEGIN_EXAMPLE
