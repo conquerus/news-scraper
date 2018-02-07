@@ -1,0 +1,31 @@
+* Online Newspaper Scraper
+** Disclaimer
+This code is not polished or well documented, since it was mostly an
+exercise to learn about web scraping large sets of data as well as to
+accomplish a very specific task. Although, it could provide some
+useful examples for someone learning to use the Beautiful Soup
+library.
+** Overview
+This is a python script to scrape an online newspaper (The Beijing
+News) and extract important information from the articles (see below),
+as well as archive the content of the articles in simple HTML
+files. It uses [[https://docs.python.org/2/library/urllib2.html][urllib2]] and [[https://www.crummy.com/software/BeautifulSoup/bs4/doc/][Beautiful Soup (bs4)]] for the scraping (see
+[[file:requirements.txt][requirements.txt]]).
+** Use
+1. Ensure the required libraries are installed (see
+[[file:requirements.txt][requirements.txt]])
+2. Create a file called =input_dates.txt= with the dates you would like
+to scrape in the following format =YYYY-MM/DD= (one per line) or use the
+=all_main_address= function in =generate_addresses.py= to generate
+them automatically in a certain range.
+3. run =python main.py=
+** Output
+The output will be in the following format:
+| ID Number | Date | Day of the Week | Page | Title | Column | Author's Name | Author's Occupation | Hyperlink |
+Example:
+#+BEGIN_EXAMPLE
+1,2017-01-01,星期日,A02：社论·来论,“专车第一案”当成司法裁判新标杆,观察家,张效羽,国家行政学院法学部副教授,=HYPERLINK("http://epaper.bjnews.com.cn/html/2017-01/01/content_666548.htm?div=-1")
+#+END_EXAMPLE
+This output can then be piped to a file (e.g. output.csv) and further
+analyzed using other software (e.g Calc). A HTML file (or several)
+with the plain text content of the articles will also be saved.
